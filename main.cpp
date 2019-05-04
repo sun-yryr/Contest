@@ -11,10 +11,10 @@ using namespace std;
 ll MOD = 10e9 + 7;
 
 int main() {
-    int n;
-    string s;
-  	cin >> n;
-    cin >> s;
+    int n = 5;
+    string s = "##.#.";
+  	//cin >> n;
+    //cin >> s;
     int black[n],white[n];
     REP(i, n) {
         if(i==0) black[i] = (s[i]=='#'? 1: 0);
