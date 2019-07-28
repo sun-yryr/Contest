@@ -42,7 +42,12 @@
       "id": "abc132_d",
       "label": "D",
       "title": "Blue and Red Balls",
-      "url": "https://atcoder.jp/contests/abc132/tasks/abc132_d"
+      "url": "https://atcoder.jp/contests/abc132/tasks/abc132_d",
+      "directory": {
+        "path": "d",
+        "testdir": "test",
+        "submit": "main.cpp"
+      }
     },
     {
       "id": "abc132_e",
