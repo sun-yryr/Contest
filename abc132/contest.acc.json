@@ -9,19 +9,34 @@
       "id": "abc132_a",
       "label": "A",
       "title": "Fifty-Fifty",
-      "url": "https://atcoder.jp/contests/abc132/tasks/abc132_a"
+      "url": "https://atcoder.jp/contests/abc132/tasks/abc132_a",
+      "directory": {
+        "path": "a",
+        "testdir": "test",
+        "submit": "main.cpp"
+      }
     },
     {
       "id": "abc132_b",
       "label": "B",
       "title": "Ordinary Number",
-      "url": "https://atcoder.jp/contests/abc132/tasks/abc132_b"
+      "url": "https://atcoder.jp/contests/abc132/tasks/abc132_b",
+      "directory": {
+        "path": "b",
+        "testdir": "test",
+        "submit": "main.cpp"
+      }
     },
     {
       "id": "abc132_c",
       "label": "C",
       "title": "Divide the Problems",
-      "url": "https://atcoder.jp/contests/abc132/tasks/abc132_c"
+      "url": "https://atcoder.jp/contests/abc132/tasks/abc132_c",
+      "directory": {
+        "path": "c",
+        "testdir": "test",
+        "submit": "main.cpp"
+      }
     },
     {
       "id": "abc132_d",
