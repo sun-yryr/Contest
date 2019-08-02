@@ -11,13 +11,18 @@ using namespace std;
 ll MOD = 10e9 + 7;
 
 int main() {
-    int n,t;
-    cin >> n >> t;
-    vector<int> a(n);
+    int n;
+    cin >> n;
+    int a[n];
     REP(i, n) cin >> a[i];
-    int counter = 0;
-    for(int i=1; i<n; i++) {
-        
+    int bug = 0, parameter = 0;
+    REP(i, n) {
+        if (a[i] != 0) {
+            bug += a[i];
+            parameter++;
+        }
     }
+    printf("%d\n", (bug+parameter-1)/parameter);
+    return 0;
 }
 
