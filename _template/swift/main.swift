@@ -24,6 +24,6 @@ extension String {
 }
 
 func main() {
-    let N = Int(readLine()!)!    
+    let N = Int(readLine()!)!
 }
 main()
