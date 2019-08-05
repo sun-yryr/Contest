@@ -17,9 +17,10 @@ int main() {
     cin >> n >> m;
     vector<int> use_match(m);
     REP(i, m) cin >> use_match[i];
-    sort(use_match.begin(), use_match.end(), [&](int x, int y) -> int {
+    /*sort(use_match.begin(), use_match.end(), [&](int x, int y) -> int {
         return match_value[x] < match_value[y]; 
-    });
+    });*/
+    sort(use_match.begin(), use_match.end(), greater<int>());
     REP(i, n+1) dp[i] = INT_MIN;
     dp[0] = 0;
     for(int i=1; i<=n; i++) {
@@ -28,14 +29,10 @@ int main() {
             if (index >= 0) dp[i] = max(dp[i], dp[index]+1);
         }
     }
-    cout << "print: dp" << endl;
-    REP(i, n+1) {
-        printf("%d ", dp[i]);
-        if (i%10==9) printf("\n");
-    }
     string res;
     while(n > 0) {
         REP(i, m) {
+            if (n-match_value[use_match[i]] < 0) continue;
             if (dp[n-match_value[use_match[i]]] == (dp[n]-1)) {
                 res += to_string(use_match[i]);
                 n -= match_value[use_match[i]];
