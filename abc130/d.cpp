@@ -1,37 +1,34 @@
-#include <iostream>
-#include <cstdio>
-#include <cstdlib>
-#include <cmath>
-#include <algorithm>
-#include <vector>
-#include <stack>
+#include <bits/stdc++.h>
 using namespace std;
+
 #define REP(i, n) for(int (i)=0; (i)<(n); (i)++)
+#define ALL(x) (x).begin(), (x).end()
 #define OUT(a) cout << (a) << "\n"
-#define ll long long
-ll MOD = 10e9 + 7;
+
+typedef long long ll;
+typedef unsigned int uint;
+typedef unsigned long long ull;
+
+const ll MOD = 10e9 + 7;
 
 int main() {
-    ll n,k;
+    int n;
+    ll k;
     cin >> n >> k;
-    ll a;
-    ll dp[n+1];
-    dp[0] =0;
+    vector<int> A(n);
+    vector<ll> cumulative(n+1);
+    cumulative[0] = 0;
     REP(i, n) {
-        scanf("%lld", &a);
-        dp[i+1] = dp[i] + a;
+        cin >> A[i];
+        cumulative[i+1] = cumulative[i] + A[i];
     }
-    ll count = 0;
-    ll tmp = 0;
-    REP(i, n+1) {
-        for(int j=i; j<n+1; j++) {
-            if (dp[j]-dp[i] >= k) {
-                count += (n-j+1);
-                tmp = 0;
-                break;
-            }
-        }
+    ll counter = 0;
+    for(int i=1; i<=n; i++) {
+        auto iter = lower_bound(ALL(cumulative), k+cumulative[i-1]);
+        //printf("%lld, %lld\n", k-cumulative[i-1], *iter);
+        //cout << (cumulative.end() - iter) << endl;
+        counter += (cumulative.end() - iter);
     }
-    OUT(count);
+    cout << counter << endl;
     return 0;
 }
