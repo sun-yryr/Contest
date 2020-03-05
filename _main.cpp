@@ -11,18 +11,31 @@ using namespace std;
 ll MOD = 10e9 + 7;
 
 int main() {
-    int n;
-    cin >> n;
-    int a[n];
-    REP(i, n) cin >> a[i];
-    int bug = 0, parameter = 0;
-    REP(i, n) {
-        if (a[i] != 0) {
-            bug += a[i];
-            parameter++;
+    string s;
+    cin >> s;
+    int n = s.size(), ans = n, len = 1;
+    string save;
+    int i=0;
+    while(i+len<n) {
+        //cout << i << " " << len << " " << save << " " << s.substr(i, len) << endl;
+        if (save != s.substr(i, len)) {
+            save = s.substr(i, len);
+            i += len;
+            len = 1;
+        } else {
+            len++;
+            ans--;
         }
     }
-    printf("%d\n", (bug+parameter-1)/parameter);
+    if (save != s.substr(i, len)) {
+            save = s.substr(i, len);
+            i += len;
+            len = 1;
+        } else {
+            len++;
+            ans--;
+        }
+    cout << ans << endl;
     return 0;
 }
 
